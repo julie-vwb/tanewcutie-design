@@ -7,190 +7,266 @@
 <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* โทนสีฟ้า-ขาว ตามที่ระบุ */
-    --blue-bg-start: #DFF1FE; 
-    --blue-bg-end: #F0F9FF;
-    
-    /* สีชื่อร้านและส่วนเน้น */
-    --shop-name-color: #79b7ed; 
-    
-    --card-white: rgba(255, 255, 255, 0.95);
-    --text-main: #5d8db5;
-    --text-highlight: #4a86b9;
-    --accent-blue: #70ace0;
+    --blue1: #DFF1FE;
+    --blue2: #b8deff;
+    --blue3: #79b7ed;
+    --blue4: #5d8db5;
+    --hot: #4a86b9;
+    --lavender: #f0f9ff;
+    --sky: #d6eeff;
+    --cream: #fffcf8;
+    --text: #5d8db5;
+    --textl: #8eb9db;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
 
 body {
-  font-family: 'Mitr', sans-serif;
-  background: linear-gradient(180deg, var(--blue-bg-start) 0%, var(--blue-bg-end) 100%);
-  background-attachment: fixed;
-  min-height: 100vh;
-  color: var(--text-main);
-  overflow-x: hidden;
+font-family: 'Mitr', sans-serif;
+background: linear-gradient(160deg, #DFF1FE 0%, #F0F9FF 50%, #ffffff 100%);
+min-height: 100vh;
+color: var(--text);
+overflow-x: hidden;
 }
 
-/* Floating Elements */
+body::before {
+content: '';
+position:fixed; inset:0;
+background:
+radial-gradient(circle at 15% 15%, rgba(223,241,254,0.4) 0%, transparent 45%),
+radial-gradient(circle at 85% 85%, rgba(121,183,237,0.15) 0%, transparent 45%);
+pointer-events:none; z-index:0;
+}
+
 .sp { position:fixed; pointer-events:none; z-index:0; animation:fl 5s ease-in-out infinite; opacity:0.6; }
 .sp:nth-child(1){top:4%;left:5%;font-size:22px;}
-.sp:nth-child(2){top:12%;right:8%;font-size:18px;animation-delay:1s;}
-.sp:nth-child(3){bottom:15%;left:10%;font-size:24px;animation-delay:.5s;}
-@keyframes fl {0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-15px) scale(1.1);}}
+.sp:nth-child(2){top:12%;right:8%;font-size:14px;animation-delay:1s;}
+.sp:nth-child(3){top:38%;left:2%;font-size:12px;animation-delay:2s;}
+.sp:nth-child(4){top:55%;right:4%;font-size:20px;animation-delay:.5s;}
+.sp:nth-child(5){bottom:22%;left:7%;font-size:16px;animation-delay:1.5s;}
+@keyframes fl {0%,100%{transform:translateY(0) rotate(0);}50%{transform:translateY(-14px) rotate(8deg);}}
 
 .wrap { max-width:480px; margin:0 auto; padding:16px 14px 60px; position:relative; z-index:1; }
 
 /* HEADER */
 .header { text-align:center; padding:35px 0 20px; animation:fadeUp .7s ease both; }
 
-/* Logo Box - ใช้รูป I'm not lazy เป็นโลโก้ */
-.logo-box {
-  width: 100%; max-width: 250px; margin: 0 auto 15px;
-  border-radius: 20px; overflow: hidden;
-  border: 4px solid #fff; box-shadow: 0 8px 20px rgba(125, 188, 245, 0.2);
+.logo-wrapper {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
 }
-.logo-box img { width: 100%; display: block; }
+.logo-img {
+  width: 100%; 
+  max-width: 240px;
+  height: auto;
+  border-radius: 20px;
+  border: 4px solid #fff;
+  box-shadow: 0 8px 20px rgba(121,183,237,0.2);
+  background: #fff;
+}
 
 .shop-name {
 font-size:2.4rem; font-weight:700;
-color: var(--shop-name-color);
+color: var(--blue3);
 letter-spacing:1px;
-display: flex; align-items: center; justify-content: center; gap: 10px;
-text-shadow: 2px 2px 5px rgba(121, 183, 237, 0.2);
+text-shadow: 2px 2px 4px rgba(121,183,237,0.15);
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 12px;
 }
-.shop-sub { 
-  font-size:.9rem; color: var(--text-highlight); 
-  margin-top:8px; line-height:1.7; font-weight: 500;
-}
+.shop-sub { font-size:.85rem; color:var(--textl); margin-top:8px; line-height:1.7; }
 
 .badges { display:flex; justify-content:center; gap:7px; flex-wrap:wrap; margin-top:11px; }
 .badge {
-background:#ffffff; border:1.8px solid var(--accent-blue);
-border-radius:20px; padding:4px 12px;
-font-size:.7rem; color:var(--accent-blue); font-weight:700;
+background:#fff; border:1.5px solid var(--blue2);
+border-radius:20px; padding:4px 13px;
+font-size:.72rem; color:var(--blue4); font-weight:500;
 }
 
 /* CARDS */
 .card {
-background: var(--card-white);
-backdrop-filter:blur(10px);
-border: 2px solid #ffffff;
-border-radius:24px; padding:22px 20px; margin-bottom:18px;
-box-shadow:0 10px 25px rgba(112, 172, 224, 0.12);
+background:rgba(255,255,255,.8); backdrop-filter:blur(12px);
+border:1.5px solid rgba(184,222,255,.4);
+border-radius:22px; padding:20px 18px; margin-bottom:14px;
+box-shadow:0 4px 18px rgba(121,183,237,.1), inset 0 1px 0 rgba(255,255,255,.8);
+position:relative; overflow:hidden;
 animation:fadeUp .6s ease both;
 }
 
-.ct { 
-  font-size:1.05rem; font-weight:700; color: var(--text-highlight); 
-  margin-bottom:15px; display:flex; align-items:center; gap:10px;
-  border-bottom: 2px solid #f0f8ff; padding-bottom: 8px;
+.ct { font-size:.98rem; font-weight:600; color:var(--blue3); margin-bottom:13px; display:flex; align-items:center; gap:8px; }
+.ct .ic { font-size:1.15rem; }
+
+/* status */
+.status-box {
+background:linear-gradient(135deg,#f0f9ff,#e1f1ff);
+border:1.5px dashed var(--blue3); border-radius:16px;
+padding:15px; text-align:center; margin-bottom:14px;
+}
+.s-open { font-size:1.2rem; font-weight:600; color:var(--hot); }
+.s-dot { display:inline-block; width:10px;height:10px; background:#6fcf97; border-radius:50%; margin-right:6px; box-shadow:0 0 0 4px rgba(111,207,151,.25); animation:blink 2s ease-in-out infinite; }
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.35;}}
+
+.div { text-align:center; color:var(--blue2); font-size:.85rem; letter-spacing:7px; margin:4px 0 14px; }
+
+/* links */
+.lnk {
+display:flex; align-items:center; gap:10px;
+background:linear-gradient(135deg,#faffff,#f0f9ff);
+border:1.5px solid rgba(121,183,237,0.2); border-radius:14px;
+padding:12px 14px; text-decoration:none; color:var(--text);
+font-size:.84rem; transition:all .2s; margin-bottom:9px;
+}
+.lnk:hover { transform:translateX(4px); border-color: var(--blue3); }
+.lnk-ic { font-size:1.3rem; flex-shrink:0; }
+.lnk-name { font-weight:600; font-size:.88rem; color:var(--blue4); margin-bottom:2px; }
+.lnk-desc { font-size:.75rem; color:var(--textl); }
+
+/* highlight box */
+.hi-box {
+background:linear-gradient(135deg,#79b7ed,#a8d3e8);
+border-radius:16px; padding:13px 16px; color:#fff;
+text-align:center; margin-bottom:12px;
+box-shadow:0 6px 20px rgba(121,183,237,.2);
 }
 
-.card-body { font-size:.92rem; line-height:1.8; color: var(--text-main); }
-
-/* Price List */
-.price-row { display: flex; justify-content: space-between; margin-bottom: 5px; border-bottom: 1px dashed #e1f1ff; padding-bottom: 5px; }
-.price-tag { color: var(--accent-blue); font-weight: 700; }
-
-/* Links Grid */
-.links-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-.link-item {
-  background: #f0f8ff; text-decoration: none; padding: 12px;
-  border-radius: 15px; text-align: center; color: var(--text-highlight);
-  font-size: 0.85rem; font-weight: 600; transition: 0.3s;
-  border: 1px solid #fff;
-}
-.link-item:hover { background: var(--white); transform: translateY(-2px); border-color: var(--accent-blue); }
-
+/* images */
 .img-box {
-width: 100%; border-radius: 18px; overflow: hidden;
-border: 2px solid #f0f8ff; background: #fff; margin-top: 10px;
+  width: 100%; border-radius: 16px; overflow: hidden;
+  border: 2px solid #fff; margin-top: 10px;
 }
 .img-box img { width: 100%; display: block; }
 
-/* CTA Button */
-.cta-wrap { display: flex; flex-direction: column; gap: 12px; align-items: center; padding: 10px 0; }
+/* CTA */
+.cta-wrap { text-align:center; padding:8px 0; }
 .cta-btn {
-display: flex; align-items: center; justify-content: center; gap: 10px;
-width: 100%; max-width: 320px;
-background: linear-gradient(135deg, #7dbcf5, #5da2e1);
-color:#ffffff; font-size:1rem; font-weight:600; padding:14px;
-border-radius:50px; text-decoration:none; transition: all 0.3s;
+display:inline-block; width:100%; max-width:300px;
+background:linear-gradient(135deg,#79b7ed,#5da2e1);
+color:#fff; font-family: 'Mitr', sans-serif;
+font-size:1rem; font-weight:500; padding:14px 36px;
+border-radius:50px; text-decoration:none;
+box-shadow:0 8px 24px rgba(121,183,237,.3);
+transition:all .3s;
 }
-.cta-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 15px rgba(125, 188, 245, 0.3); }
+.cta-btn:hover { transform:translateY(-3px); }
 
-.footer { text-align:center; padding:20px 0; font-size:.8rem; color:var(--text-highlight); opacity: 0.8; }
+/* footer */
+.footer { text-align:center; padding:16px 0 8px; font-size:.73rem; color:var(--textl); }
 
-@keyframes fadeUp { from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);} }
 </style>
+
 </head>
 <body>
 <div class="sp">☁️</div>
-<div class="sp">🧵</div>
-<div class="sp">🫧</div>
+<div class="sp">✨</div>
+<div class="sp">☁️</div>
+<div class="sp">🌸</div>
+<div class="sp">⋆</div>
 
 <div class="wrap">
   <div class="header">
-    <div class="logo-box">
-      <img src="โลโก้.jpeg" alt="Tanewcutie Logo">
+    <div class="logo-wrapper">
+      <img src="โลโก้.jpeg" alt="Logo" class="logo-img">
     </div>
+    
     <div class="shop-name">˗ˏˋ Tanewcutie ´ˎ˗</div>
     <div class="shop-sub">
-      Welcome To Tanewcutie 𓈒 สอบถามเพิ่มเติม<br>
-      ทักแชท 𓈒 หรือไลน์ได้เลยค่ะ
+      ˗ˏˋ Welcome To Tanewcutie ´ˎ˗<br>
+      สอบถามเพิ่มเติม 𓈒 ทักแชท 𓈒 หรือไลน์ได้เลยค่ะ
     </div>
     <div class="badges">
-      <span class="badge">🎨 รับออกแบบป้าย</span>
-      <span class="badge">☁️ น่ารัก/Ads/มืด</span>
-      <span class="badge">⏱️ 24 hr.</span>
+      <span class="badge">🎨 รับทำป้าย</span>
+      <span class="badge">☁️ แนวน่ารัก</span>
+      <span class="badge">⏱️ รองานไว</span>
+    </div>
+  </div>
+
+  <div class="div">✦ · · ✦ · · ✦</div>
+
+  <div class="status-box">
+    <div class="s-open"><span class="s-dot"></span>พร้อมรับออเดอร์นะคะ 🎀</div>
+  </div>
+
+  <div class="card">
+    <div class="ct"><span class="ic">💰</span> ราคาการทำงาน</div>
+    <div style="font-size:.88rem;line-height:1.9;color:var(--text);margin-bottom:8px;">
+      <b>🧸 แนวน่ารัก :</b> ป้ายละ 65฿<br>
+      <small>(เรทเกม, แอพพรี เริ่มต้น 65 - 80+฿)</small><br>
+      <b>📢 แนวกึ่ง Ads :</b> ป้ายละ 89฿<br>
+      <small>(เรทเกม, แอพพรี เริ่มต้น 89 - 109+฿)</small><br>
+      <b>🖤 แนวมืด :</b> ป้ายละ 99฿<br>
+      <small>(เรทเกม, แอพพรี เริ่มต้น 99 - 119+฿)</small>
+    </div>
+    <div class="hi-box" style="margin-bottom:0;">
+      <b>💝 สั่ง 3 ป้ายขึ้นไป มีราคาเหมานะคะ ♡</b>
     </div>
   </div>
 
   <div class="card">
-    <div class="ct"><span class="ic">💰</span> เรทราคาเริ่มต้น</div>
-    <div class="card-body">
-      <div class="price-row"><span>🧸 แนวน่ารัก</span> <span class="price-tag">65฿</span></div>
-      <div class="price-row"><span>📢 แนวกึ่ง Ads</span> <span class="price-tag">89฿</span></div>
-      <div class="price-row"><span>🖤 แนวมืด</span> <span class="price-tag">99฿</span></div>
-      <p style="margin-top: 10px; font-weight: 600; text-align: center; color: var(--accent-blue);">
-        💖 สั่ง 3 ป้ายขึ้นไป มีราคาเหมานะคะ ♡
-      </p>
-    </div>
+    <div class="ct"><span class="ic">🖼️</span> ดูตัวอย่างผลงาน</div>
+    <a href="https://drive.google.com/drive/folders/1-gib_4Av2GDMygX2TyUrS6utN5Z8QXmB" class="lnk" target="_blank">
+      <span class="lnk-ic">🎨</span>
+      <div><div class="lnk-name">Example Work</div><div class="lnk-desc">ดูผลงานรวมของทางร้าน</div></div>
+    </a>
+    <a href="https://drive.google.com/drive/folders/1-tF6cJL2O6LoXql259bmgc4-YLM4Hnkj" class="lnk" target="_blank">
+      <span class="lnk-ic">🐰</span>
+      <div><div class="lnk-name">Example Toon</div><div class="lnk-desc">ดูตัวอย่างตูนน่ารักๆ</div></div>
+    </a>
+    <a href="https://drive.google.com/drive/folders/1XWqWEV796pqOAnxA90WroAXOzCkx3oSI" class="lnk" target="_blank">
+      <span class="lnk-ic">🖼️</span>
+      <div><div class="lnk-name">Example Frame</div><div class="lnk-desc">ดูตัวอย่างกรอบป้าย</div></div>
+    </a>
+    <a href="https://drive.google.com/drive/folders/1q6ONhxo_-JEEykF9k8Zsp006n0_iGUWG" class="lnk" target="_blank">
+      <span class="lnk-ic">🧊</span>
+      <div><div class="lnk-name">Example Block</div><div class="lnk-desc">ดูตัวอย่างบล็อกข้อความ</div></div>
+    </a>
+    <a href="https://drive.google.com/drive/folders/11L40fVk5VL35OfHG187ph2TZ__vLRHmK" class="lnk" target="_blank" style="background: #fff5f8;">
+      <span class="lnk-ic">🔥</span>
+      <div><div class="lnk-name">รวมป้ายปล่อย F</div><div class="lnk-desc">ดูป้ายว่างพร้อมรับค่ะ</div></div>
+    </a>
   </div>
 
   <div class="card">
-    <div class="ct"><span class="ic">🖼️</span> ดูตัวอย่างงาน (Drive)</div>
-    <div class="links-grid">
-      <a href="https://drive.google.com/drive/folders/1-gib_4Av2GDMygX2TyUrS6utN5Z8QXmB" class="link-item" target="_blank">Example Work</a>
-      <a href="https://drive.google.com/drive/folders/1-tF6cJL2O6LoXql259bmgc4-YLM4Hnkj" class="link-item" target="_blank">Example Toon</a>
-      <a href="https://drive.google.com/drive/folders/1XWqWEV796pqOAnxA90WroAXOzCkx3oSI" class="link-item" target="_blank">Example Frame</a>
-      <a href="https://drive.google.com/drive/folders/1q6ONhxo_-JEEykF9k8Zsp006n0_iGUWG" class="link-item" target="_blank">Example Block</a>
+    <div class="ct"><span class="ic">⏱️</span> ระยะเวลาการทำงาน</div>
+    <div style="font-size:.85rem;line-height:1.8;color:var(--text);">
+      ☁️ รองานภายใน <b>24 hr.</b><br>
+      ☁️ หากติดคิวรอ <b>1-3 day</b> หรือมากกว่านี้ตามคิว<br>
+      <small>*สามารถสอบถามก่อนสั่งได้ค่า</small>
     </div>
-    <a href="https://drive.google.com/drive/folders/11L40fVk5VL35OfHG187ph2TZ__vLRHmK" class="link-item" style="display:block; margin-top:10px; background:#fff5f8;" target="_blank">🔥 รวมป้ายปล่อย F</a>
+    <a href="https://docs.google.com/spreadsheets/d/1KRb2SRV7i51ou6adoeIPYc0uWGeOc5Dyvcuz7AW6dCU/edit?usp=drivesdk" class="lnk" target="_blank" style="margin-top:10px;">
+      <span class="lnk-ic">📊</span>
+      <div><div class="lnk-name">Check Queue</div><div class="lnk-desc">กดเพื่อตรวจสอบคิวงานค่ะ →</div></div>
+    </a>
   </div>
 
   <div class="card">
     <div class="ct"><span class="ic">📝</span> วิธีการบรีฟงาน</div>
     <div class="img-box">
-      <img src="ไม่มีชื่อ 292_20250613000624.png" alt="How to brief">
-    </div>
-    <div class="card-body" style="margin-top: 15px;">
-      <b>⏱️ ระยะเวลาทำงาน:</b><br>
-      รองานภายใน 24 hr. 𓈒 หากติดคิวรอ 1-3 day ♡<br>
-      <a href="https://docs.google.com/spreadsheets/d/1KRb2SRV7i51ou6adoeIPYc0uWGeOc5Dyvcuz7AW6dCU/edit?usp=drivesdk" style="color: var(--accent-blue); font-weight: 600;" target="_blank">📊 เช็คคิวงานที่นี่</a>
+      <img src="ไม่มีชื่อ 292_20250613000624.png" alt="Brief Guide">
     </div>
   </div>
 
-  <div class="cta-wrap">
-    <a href="https://www.facebook.com/share/1A2KPdb4KT/?mibextid=wwXIfr" class="cta-btn" target="_blank">
-      💙 Facebook: Tanewcutie
+  <div class="card">
+    <div class="ct"><span class="ic">📱</span> ช่องทางติดต่อ</div>
+    <a href="https://www.facebook.com/share/1A2KPdb4KT/?mibextid=wwXIfr" class="lnk" target="_blank">
+      <span class="lnk-ic">📘</span>
+      <div><div class="lnk-name">Facebook</div><div class="lnk-desc">Tanewcutie · ติดต่อสอบถาม</div></div>
     </a>
-    <a href="https://lin.ee/oL0vZu8" class="cta-btn" style="background: linear-gradient(135deg, #4ade80, #22c55e);" target="_blank">
-      💚 Line Official Account
+    <a href="https://lin.ee/oL0vZu8" class="lnk" target="_blank">
+      <span class="lnk-ic">💚</span>
+      <div><div class="lnk-name">LINE Official</div><div class="lnk-desc">@Tanewcutie · สั่งงานทางนี้ได้เลย</div></div>
+    </a>
+  </div>
+
+  <div class="cta-wrap">
+    <a href="https://lin.ee/oL0vZu8" class="cta-btn" target="_blank">
+      💝 ติดต่อสั่งงาน
     </a>
   </div>
 
   <div class="footer">
-    <div>made with ☁️ · Tanewcutie · Design Service</div>
+    <div>made with ☁️ · Tanewcutie · ร้านทำป้ายออนไลน์</div>
   </div>
 </div>
 </body>
