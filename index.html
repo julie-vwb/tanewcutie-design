@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tanewcutie ☁️</title>
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-main: #DFF1FE;
+    --bg-light: #F0F9FF;
+    --accent-blue: #79b7ed;
+    --text-dark: #5d8db5;
+    --text-soft: #8eb9db;
+    --white: #ffffff;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Mitr', sans-serif;
+    background: linear-gradient(180deg, var(--bg-main) 0%, var(--bg-light) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: var(--text-dark);
+  }
+
+  .wrap { max-width:480px; margin:0 auto; padding:20px 15px 60px; position:relative; z-index:1; }
+
+  /* HEADER */
+  .header { text-align:center; padding:30px 0 10px; animation:fadeUp .7s ease both; }
+  .logo-wrapper { 
+    width: 200px; /* ปรับขนาดให้กว้างขึ้นเพื่อให้เห็นข้อความชัดเจน */
+    margin: 0 auto 15px; 
+  }
+  .logo-img { 
+    width: 100%; 
+    height: auto; 
+    border-radius: 20px; /* ปรับเป็นสี่เหลี่ยมมุมมนเพื่อให้เข้ากับรูปข้อความ */
+    border: 3px solid var(--white); 
+    box-shadow: 0 8px 25px rgba(125, 188, 245, 0.2);
+    background: var(--white);
+  }
+
+  .shop-name { font-size: 2.4rem; font-weight: 700; color: var(--accent-blue); text-shadow: 2px 2px 0px var(--white); }
+  .shop-sub { font-size: 0.9rem; color: var(--text-soft); line-height: 1.6; margin-top: 10px; }
+
+  /* CARDS */
+  .card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 25px; padding: 20px; margin-bottom: 15px;
+    border: 2px solid var(--white);
+    box-shadow: 0 10px 25px rgba(112, 172, 224, 0.1);
+    animation: fadeUp .6s ease both;
+  }
+
+  .ct { font-size: 1.05rem; font-weight: 600; color: var(--accent-blue); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+
+  .price-item { background: var(--white); border-radius: 15px; padding: 12px; margin-bottom: 10px; border-left: 4px solid var(--accent-blue); }
+  .price-title { font-weight: 600; font-size: 0.95rem; }
+  .price-val { font-size: 0.85rem; color: var(--text-soft); }
+
+  /* LINKS GRID */
+  .links-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .btn-link {
+    background: var(--white); text-decoration: none; padding: 15px 10px; border-radius: 18px;
+    display: flex; flex-direction: column; align-items: center; border: 1px solid var(--bg-main); transition: 0.3s;
+  }
+  .btn-link:hover { transform: translateY(-3px); border-color: var(--accent-blue); }
+  .btn-link span { font-size: 0.8rem; font-weight: 600; color: var(--text-dark); margin-top: 6px; }
+
+  .hi-box { background: linear-gradient(135deg, var(--accent-blue), #93c5fd); color: var(--white); border-radius: 18px; padding: 15px; text-align: center; }
+
+  .img-box { width: 100%; border-radius: 18px; overflow: hidden; border: 3px solid var(--white); margin-top: 10px; }
+  .img-box img { width: 100%; display: block; }
+
+  .social-btn {
+    display: flex; align-items: center; gap: 12px; background: var(--white); padding: 16px 20px;
+    border-radius: 50px; text-decoration: none; color: var(--text-dark); margin-bottom: 12px; font-weight: 600; transition: 0.3s;
+  }
+  .social-btn:hover { transform: translateX(5px); background: var(--bg-light); border: 1px solid var(--accent-blue); }
+
+  .footer { text-align: center; padding: 25px 0; font-size: 0.75rem; color: var(--text-soft); }
+
+  @keyframes fadeUp { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="header">
+    <div class="logo-wrapper">
+      <img src="logo.png" alt="Tanewcutie Logo" class="logo-img">
+    </div>
+    <div class="shop-name">Tanewcutie</div>
+    <div class="shop-sub">
+      ˗ˏˋ Welcome To Tanewcutie ´ˎ˗<br>
+      สอบถามเพิ่มเติม 𓈒 ทักแชท 𓈒 หรือไลน์ได้เลยค่ะ
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">🎨 ประเภทงานและราคา</div>
+    <div class="price-item">
+      <div class="price-title">🧸 แนวน่ารัก</div>
+      <div class="price-val">ป้ายละ 65฿ | เรทเกม/แอพ 65-80+฿</div>
+    </div>
+    <div class="price-item">
+      <div class="price-title">📢 แนวกึ่ง Ads</div>
+      <div class="price-val">ป้ายละ 89฿ | เรทเกม/แอพ 89-109+฿</div>
+    </div>
+    <div class="price-item">
+      <div class="price-title">🖤 แนวมืด</div>
+      <div class="price-val">ป้ายละ 99฿ | เรทเกม/แอพ 99-119+฿</div>
+    </div>
+    <div class="hi-box"><b>สั่ง 3 ป้ายขึ้นไป มีราคาเหมานะคะ ♡</b></div>
+  </div>
+
+  <div class="card">
+    <div class="ct">🖼️ ดูตัวอย่างงาน</div>
+    <div class="links-grid">
+      <a href="https://drive.google.com/drive/folders/1-gib_4Av2GDMygX2TyUrS6utN5Z8QXmB" class="btn-link" target="_blank"><span>Example Work</span></a>
+      <a href="https://drive.google.com/drive/folders/1-tF6cJL2O6LoXql259bmgc4-YLM4Hnkj" class="btn-link" target="_blank"><span>Example Toon</span></a>
+      <a href="https://drive.google.com/drive/folders/1XWqWEV796pqOAnxA90WroAXOzCkx3oSI" class="btn-link" target="_blank"><span>Example Frame</span></a>
+      <a href="https://drive.google.com/drive/folders/1q6ONhxo_-JEEykF9k8Zsp006n0_iGUWG" class="btn-link" target="_blank"><span>Example Block</span></a>
+    </div>
+    <a href="https://drive.google.com/drive/folders/11L40fVk5VL35OfHG187ph2TZ__vLRHmK" class="social-btn" style="margin-top:10px; justify-content:center;">🔥 รวมป้ายปล่อย F</a>
+  </div>
+
+  <div class="card">
+    <div class="ct">⏱️ ระยะเวลาการทำงาน</div>
+    <p style="font-size:0.9rem;">รองานภายใน <b>24 hr.</b> หากติดคิวรอ <b>1-3 day</b></p>
+    <a href="https://docs.google.com/spreadsheets/d/1KRb2SRV7i51ou6adoeIPYc0uWGeOc5Dyvcuz7AW6dCU/edit?usp=drivesdk" class="social-btn" style="margin-top:10px;">📊 Check Queue</a>
+  </div>
+
+  <div class="card">
+    <div class="ct">📝 วิธีการบรีฟงาน</div>
+    <div class="img-box">
+      <img src="brief-guide.png" alt="Brief Guide">
+    </div>
+  </div>
+
+  <div class="card" style="background:transparent; border:none; box-shadow:none; padding:0;">
+    <a href="https://www.facebook.com/share/1A2KPdb4KT/?mibextid=wwXIfr" class="social-btn" target="_blank">📘 Facebook: Tanewcutie</a>
+    <a href="https://lin.ee/oL0vZu8" class="social-btn" target="_blank">💚 Line Official Account</a>
+  </div>
+
+  <div class="footer">Tanewcutie · Design Service ☁️</div>
+</div>
+</body>
+</html>
