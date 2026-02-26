@@ -47,7 +47,7 @@ pointer-events:none; z-index:0;
 
 .wrap { max-width:480px; margin:0 auto; padding:16px 14px 60px; position:relative; z-index:1; }
 
-/* HEADER */
+/* HEADER - ปรับโลโก้เป็นวงกลมพร้อมกรอบ */
 .header { text-align:center; padding:35px 0 20px; animation:fadeUp .7s ease both; }
 
 .logo-wrapper {
@@ -56,12 +56,13 @@ pointer-events:none; z-index:0;
   justify-content: center;
 }
 .logo-img {
-  width: 100%; 
-  max-width: 240px;
-  height: auto;
-  border-radius: 20px;
-  border: 4px solid #fff;
-  box-shadow: 0 8px 20px rgba(121,183,237,0.2);
+  width: 180px; 
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%; /* ทำให้เป็นวงกลม */
+  border: 6px solid #fff; /* กรอบขาวชั้นใน */
+  outline: 2px solid var(--blue3); /* เส้นขอบฟ้าชั้นนอก */
+  box-shadow: 0 8px 25px rgba(121,183,237,0.25);
   background: #fff;
 }
 
